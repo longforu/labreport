@@ -3,13 +3,14 @@
 
 I chose `grep` for my specific command. I asked ChatGPT for 4 ways to use `grep` and I will demonstrate them with 2 example each on technical.
 
-**Usage 1: basic `grep`**
+**Usage 1: `grep` with color**
 
-`grep` is useful in many contets, especially in config files where things are usually seperated out by lines, and in reading in and processing data.
+The ``--color`` option highlight the query word in the line, which is very useful for long lines (eg paragraphs in txt files).
 
+**Example 1** This should highlight the word "Bush" and make finding it easier.
 Code:
 ```
-grep "Bush" ./911report/*.txt
+grep --color "Bush" ./911report/*.txt
 ```
 
 Output (truncated):
@@ -19,9 +20,11 @@ Output (truncated):
 ...
 ```
 
+**Example 2:** This should highlight the word "San Diego" and make finding it easier.
+
 Code:
 ```
-grep "San Diego" ./government/Media/*.txt
+grep --color "San Diego" ./government/Media/*.txt
 ```
 
 Output:
@@ -33,6 +36,9 @@ Output:
 **Usage 2: Using recursive `grep`**
 
 This will be useful to look for stuff in the ``technical`` folder without keying in to one txt pattern.
+
+
+**Example 1:** This should find all the files that contain the word "San Diego" in the ``government`` folder.
 
 Code:
 ```
@@ -51,6 +57,8 @@ Output:
 ./government/Media/Bridging_legal_aid_gap.txt:The San Diego Union-Tribune
 ```
 
+**Example 2:** This should find all the files that contain the word "Computer" in the ``911report`` folder.
+
 Code:
 ```
 grep -r "Computer" ./911report
@@ -67,6 +75,8 @@ Output:
 
 This will be useful to look for common words, since they may be used at the beginning of the sentence.
 
+**Example 1:** ``mathematic`` is a common word, so we should use case-insensitive search to find it.
+
 Code
 ```
 grep -i -r "mathematic" ./government
@@ -79,6 +89,8 @@ Output:
 ./government/Gen_Account_Office/Statements_Feb28-1997_volume.txt:used to analyze economic data through mathematical and statistical
 ./government/Gen_Account_Office/im814.txt:Software metrics, which use mathematical models to measure
 ```
+
+**Example 2:** ``Computer`` is a common word, so we should use case-insensitive search to find it.
 
 Code:
 ```
@@ -130,6 +142,8 @@ We see a lot more matches for "Computer".
 
 This will be very convenient as a reference system for future usage.
 
+**Example 1:** This should display the line number of the word "San Diego" in the ``government`` folder.
+
 Code
 ```
 grep -i -r -n "San Diego" ./government
@@ -146,6 +160,8 @@ Output:
 ./government/Media/Free_Legal_Assistance.txt:28:operating in Sacramento, San Diego and Ventura.
 ./government/Media/Bridging_legal_aid_gap.txt:5:The San Diego Union-Tribune
 ```
+
+**Example 2:** This should display the line number of the word "University of California" in the ``government`` folder.
 
 Code:
 ```
