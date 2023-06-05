@@ -96,6 +96,7 @@ java MyCalc $1 $2
 Command ran to trigger the bug:
 
 ```bash
+chmod 777 ./compile_and_run.sh
 ./compile_and_run.sh 5 2
 ```
 
