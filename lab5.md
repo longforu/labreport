@@ -136,4 +136,4 @@ Description of the fix: I casted the integers to doubles before dividing them. T
 
 ## Reflection
 
-In the second half of this quarter, I learned the importance of modular programming and how breaking down a complex problem into smaller, manageable tasks can significantly improve code organization and ease debugging. I also gained exposure to new programming concepts, such as remote debugging, which allowed me to tackle problems from unique angles.
+In the second half of this quarter, I learned the importance of modular programming and how breaking down a complex problem into smaller, manageable tasks can significantly improve code organization and ease debugging. I also gained exposure to new programming concepts, such as remote server debugging, which allowed me to tackle problems from unique angles.
